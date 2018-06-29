@@ -3,6 +3,7 @@ package com.example.android.quizapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,21 +22,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public int calculateScore(boolean true, boolean false, boolean true, boolean true) {
-        if (true) {
-            totalScore++;
-        }
+    /**
+     * This method is called when the order button is clicked.
+     */
+    public void calculateScore(View view) {
+        String priceMessage = "Your answers have been received" ;
+        priceMessage = priceMessage + "\nThank you!";
+        displayMessage(priceMessage);
+    }
 
-        if (false) {
-            totalScore++;
-        }
-        if (true) {
-            totalScore++;
-        }
-        if (true) {
-            totalScore++;
-        }
-
-        return totalScore;
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
